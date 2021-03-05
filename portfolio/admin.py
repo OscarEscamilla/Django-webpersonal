@@ -5,6 +5,10 @@ from portfolio.models import Project
 
 
 
-admin.site.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    readonly_fields = ('created', 'updated')
+
+
+admin.site.register(Project, ProjectAdmin)
 
 # Register your models here.
